@@ -50,6 +50,7 @@ Original author: [Justin Aiken](https://github.com/JustinAiken)
 
 * [Source](https://github.com/JustinAiken/my_timeline)
 * [Bug Tracker](https://github.com/JustinAiken/my_timeline/issues)
+* [Rubygem](https://rubygems.org/gems/my_timeline)
 
 ## Note on Patches/Pull Requests
 
