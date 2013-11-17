@@ -7,7 +7,7 @@ The aggregated information is displayed in a unified timeline.
 It is being developed with extensibility in mind - each service will have it's own plugin.
 
 What it looks like:
-![Screenshot][docs/screenshot.png]
+![Screenshot](doc/screenshot.png)
 
 ### Requirements:
 - Rails 3.x - Rails 4 is not currently supported, but it's on the todo..
