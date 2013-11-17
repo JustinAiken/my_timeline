@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1> Justin Aiken </h1><small>A demonstration timeline</small>
+</div>
+
+<% @dates_with_events.each do |day| %>
+  <h4><%= date_header_string day[:date] %></h4>
+
+  <%= render partial: "my_timeline/events/day_with_events_#{MyTimeline.render_method}", locals: {events: day[:events]} %>
+<% end %>
+
+<%= paginate @events %>

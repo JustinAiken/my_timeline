@@ -1,0 +1,10 @@
+<div class="page-header">
+  <h1><%= I18n.t("my_timeline.control_panel.header") %></h1>
+</div>
+
+<% @enabled_plugins.each do |plug| %>
+  <%= render partial: "my_timeline/#{plug}/control_panel" %>
+<% end %>
+
+<h3> New Post </h3>
+<%= link_to "Add", new_post_path %> a self-contained post.

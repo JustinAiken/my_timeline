@@ -1,0 +1,35 @@
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <div class="alert alert-error">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :happened_on, 'Happened On' %>
+  <%= f.datetime_select :happened_on, {prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }}, {class: 'date-select'} %>
+  <br />
+
+  <%= f.fields_for :event do |ff| %>
+    <div>
+      <%= ff.label :description, 'Description' %>
+      <%= ff.text_field :description %>
+
+      <%= ff.label :public, 'Publically viewable' %>
+      <%= ff.check_box :public %>
+    </div>
+  <% end %>
+
+  <%= f.label :full_text, 'Text:' %>
+  <%= f.text_area :full_text %>
+  <br />
+
+  <br />
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,14 @@
+<table class="<%= MyTimeline.table_class %>">
+  <thead>
+    <th></th>
+  </thead>
+  <tbody>
+    <% events.each do |event| %>
+      <tr>
+        <td style="vertical-align:middle;">
+          <%= render partial: 'my_timeline/events/event', object: MyTimeline::EventPresenter.new(event) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

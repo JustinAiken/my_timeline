@@ -1,0 +1,15 @@
+===============================================================================
+
+Please add my_timeline to your routes file:
+
+  1. For a multiple-user instance:
+
+  resources :users do
+    mount MyTimeline::Engine => '/timeline', as: :my_timeline
+  end
+
+  2. For a single timeline:
+
+  mount MyTimeline::Engine => '/timeline', as: :my_timeline
+
+===============================================================================

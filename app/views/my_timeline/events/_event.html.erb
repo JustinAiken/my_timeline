@@ -1,0 +1,17 @@
+<p>
+<%= link_to "show_event_path(event.id)", remote: true do %>
+  <%= glyph 'plus-sign' %>
+<% end %>
+
+<%= image_tag event.icon_path, size: "32x32" %>
+<%= event.happened_on %> -
+<%= raw event.description %>
+<% if @owner_viewing %>
+  <%= link_to edit_event_path(event.id) do %>
+    <%= glyph 'pencil' %>
+  <% end %>
+  <%= link_to event_path(event.event), method: :delete do %>
+    <%= glyph 'remove-sign' %>
+  <% end %>
+<% end %>
+</p>

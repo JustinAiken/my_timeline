@@ -1,0 +1,7 @@
+<ul>
+  <% events.each do |event| %>
+    <li>
+      <%= render partial: 'my_timeline/events/event', object: MyTimeline::EventPresenter.new(event) %>
+    </li>
+  <% end %>
+</ul>
