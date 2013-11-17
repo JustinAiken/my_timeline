@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/JustinAiken/my_timeline.png)](https://codeclimate.com/github/JustinAiken/my_timeline)
+
 # My Timeline
 #### A social-media aggregation/display plugin
 
