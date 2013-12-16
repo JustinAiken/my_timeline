@@ -24,6 +24,10 @@ It is being developed with extensibility in mind - each service will have it's o
 - [Github](https://github.com/JustinAiken/my_timeline-github) - COMING SOON
 - If you develop another, let me know and I'll add it here!
 
+### Demonstration
+
+There is a [small demo app](https://github.com/JustinAiken/my_timeline-demo) available to show how it looks inside a fresh Rails application with a Devise User system.
+
 ### Usage:
 
 1. Add the gem to your Gemfile: `gem 'my_timeline'` and `bundle install`
