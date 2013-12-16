@@ -1,5 +1,4 @@
 require 'my_timeline/settings_ext'
-require 'my_timeline/application_helper'
 
 module MyTimeline
   class Engine < ::Rails::Engine
