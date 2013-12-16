@@ -1,9 +1,9 @@
 module MyTimeline
   module ApplicationHelper
-    def method_missing(method, *args, &block)
-      if method.to_s.end_with?('_path') || method.to_s.end_with?('_url')
-        if main_app.respond_to? method
-          main_app.send method, *args
+    def method_missing(meth, *args, &block)
+      if meth.to_s =~ /_path$|_url$/
+        if main_app.respond_to? meth
+          main_app.send meth, *args
         else
           super
         end
@@ -12,9 +12,9 @@ module MyTimeline
       end
     end
 
-    def respond_to?(method)
-      if method.to_s.end_with?('_path') || method.to_s.end_with?('_url')
-        if main_app.respond_to? method
+    def respond_to?(meth)
+      if meth.to_s =~ /_path$|_url$/
+        if main_app.respond_to? meth
           true
         else
           super
