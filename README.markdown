@@ -21,7 +21,7 @@ It is being developed with extensibility in mind - each service will have it's o
 
 - [Runkeeper](https://github.com/JustinAiken/my_timeline-health_graph)
 - [Twitter](https://github.com/JustinAiken/my_timeline-twitter)
-- [Github](https://github.com/JustinAiken/my_timeline-github) - COMING SOON
+- [Github](https://github.com/JustinAiken/my_timeline-github)
 - If you develop another, let me know and I'll add it here!
 
 ### Demonstration
