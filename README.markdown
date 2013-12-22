@@ -1,8 +1,7 @@
-[![Code Climate](https://codeclimate.com/github/JustinAiken/my_timeline.png)](https://codeclimate.com/github/JustinAiken/my_timeline)
-[![Build Status](https://secure.travis-ci.org/JustinAiken/my_timeline.png?branch=master)](http://travis-ci.org/JustinAiken/my_timeline)
 
-# My Timeline
-#### A social-media aggregation/display plugin
+
+# My Timeline [![Code Climate](https://codeclimate.com/github/JustinAiken/my_timeline.png)](https://codeclimate.com/github/JustinAiken/my_timeline) [![Build Status](https://secure.travis-ci.org/JustinAiken/my_timeline.png?branch=master)](http://travis-ci.org/JustinAiken/my_timeline)
+#### A social-media aggregation/display plugin 
 
 This is a Rails Engine to help pull in content from any number of social media sites, services, or websites.
 The aggregated information is displayed in a unified timeline.
