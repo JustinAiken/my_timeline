@@ -1,7 +1,5 @@
-
-
 # My Timeline [![Code Climate](https://codeclimate.com/github/JustinAiken/my_timeline.png)](https://codeclimate.com/github/JustinAiken/my_timeline) [![Build Status](https://secure.travis-ci.org/JustinAiken/my_timeline.png?branch=master)](http://travis-ci.org/JustinAiken/my_timeline)
-#### A social-media aggregation/display plugin 
+#### A social-media aggregation/display plugin
 
 This is a Rails Engine to help pull in content from any number of social media sites, services, or websites.
 The aggregated information is displayed in a unified timeline.
@@ -12,7 +10,8 @@ It is being developed with extensibility in mind - each service will have it's o
 ![Screenshot](doc/screenshot.png)
 
 ### Requirements:
-- Rails 3.x - Rails 4 is not currently supported, but it's on the todo..
+- Ruby 1.9.3 or 2.x
+- Rails 3.1.x or 3.2.x or 4.x
 - Bootstrap (or bootstrap-named classes) - For the markup.  Just stuff like `table.table-striped`, no stuctural markup from Bootstrap is needed
 - Any standard ActiveRecord-compatible database should work
 
