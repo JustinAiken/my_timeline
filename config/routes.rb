@@ -4,5 +4,5 @@ MyTimeline::Engine.routes.draw do
   resources :events
   resources :posts
 
-  match "control_panel" => "control_panel#index", as: "control_panel"
+  get "control_panel" => "control_panel#index", as: "control_panel"
 end
