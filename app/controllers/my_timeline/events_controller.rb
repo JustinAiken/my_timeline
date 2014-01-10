@@ -15,7 +15,7 @@ module MyTimeline
     end
 
     def show
-
+      #
     end
 
     def edit
@@ -24,7 +24,7 @@ module MyTimeline
 
     def update
       @event = Event.find_by_id(params[:id])
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes(rails4? ? event_params : params[:event])
         redirect_to root_path, notice: "Edit successful."
       else
         render 'edit'
@@ -47,6 +47,12 @@ module MyTimeline
         @events_by_day.each do |date, events|
           array << DateWithEvents.new(date, events.reverse)
         end
+      end
+    end
+
+    if rails4?
+      define_method :event_params do
+        params.required(:event).permit :description, :happened_on, :public
       end
     end
   end

@@ -1,7 +1,10 @@
 module MyTimeline
   class Post < ActiveRecord::Base
-    attr_accessible :happened_on, :full_text
-    attr_accessible :event, :event_id, :event_attributes
+
+    unless rails4?
+      attr_accessible :happened_on, :full_text
+      attr_accessible :event, :event_id, :event_attributes
+    end
 
     belongs_to :event, dependent: :destroy
 
