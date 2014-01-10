@@ -1,9 +1,12 @@
 module MyTimeline
   class Event < ActiveRecord::Base
-    attr_accessible :description, :happened_on, :icon_name, :external_link, :original_id, :public, :importance
-    attr_accessible :user, :linkable, :user_id, :linkable_type, :linkable_id
 
-    belongs_to :linkable, polymorphic: true, dependent: :destroy
+    unless rails4?
+      attr_accessible :description, :happened_on, :icon_name, :external_link, :original_id, :public, :importance
+      attr_accessible :user, :linkable, :user_id, :linkable_type, :linkable_id
+    end
+
+    belongs_to :linkable, polymorphic: true, dependent: :delete
     belongs_to :user, class_name: MyTimeline.user_class.to_s
 
     validates :description, presence: true

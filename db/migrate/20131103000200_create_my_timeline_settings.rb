@@ -9,6 +9,6 @@ class CreateMyTimelineSettings < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :my_timeline_settings, [ :target_type, :target_id, :var ], :unique => true
+    add_index :my_timeline_settings, [ :target_type, :target_id, :var ], :unique => true, :name => "index_my_timeline_settings_on_user"
   end
 end
