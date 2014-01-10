@@ -51,6 +51,5 @@ ActiveRecord::Schema.define(:version => 20131103135539) do
     t.datetime "updated_at",  :null => false
   end
 
-  add_index "my_timeline_settings", ["target_type", "target_id", "var"], :name => "index_my_timeline_settings_on_target_type_and_target_id_and_var", :unique => true
-
+  add_index "my_timeline_settings", ["target_type", "target_id", "var"], :name => "index_my_timeline_settings_on_user", :unique => true
 end
