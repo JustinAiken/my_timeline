@@ -1,0 +1,5 @@
+<%= form_for @user, url: control_panel_timezone_path, method: :post do |f| %>
+  <%= f.time_zone_select :time_zone %>
+  <br>
+  <%= f.submit 'Save', class: "btn btn-primary" %>
+<% end %>

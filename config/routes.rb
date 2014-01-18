@@ -4,5 +4,6 @@ MyTimeline::Engine.routes.draw do
   resources :events
   resources :posts
 
-  get "control_panel" => "control_panel#index", as: "control_panel"
+  get  "control_panel" => "control_panel#index",    as: "control_panel"
+  post "control_panel" => "control_panel#timezone", as: "control_panel_timezone"
 end

@@ -2,8 +2,16 @@
   <h1><%= I18n.t("my_timeline.control_panel.header") %></h1>
 </div>
 
+<div>
+  <h3>My Settings</h2>
+  <%= render partial: "my_timeline/control_panel/time_zone" %>
+</div>
+
+<hr>
+
 <% @enabled_plugins.each do |plug| %>
   <%= render partial: "my_timeline/#{plug}/control_panel" %>
+  <hr>
 <% end %>
 
 <h3> New Post </h3>
