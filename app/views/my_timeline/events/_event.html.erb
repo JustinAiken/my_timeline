@@ -1,6 +1,10 @@
 <p>
-<%= link_to event.external_link do %>
-  <%= glyph 'plus-sign' %>
+  <% if event.linkable.class.respond_to? :is_exandable? %>
+    <%= link_to "#", class: "event_expand", id: "event_#{event.id}" do %>
+      <%= glyph 'plus-sign' %>
+    <% end %>
+  <% end %>
+  <%= link_to event.external_link do %>
   <%= image_tag event.icon_path, size: "32x32" %>
 <% end %>
 <%= event.happened_on %> -
@@ -14,3 +18,10 @@
   <% end %>
 <% end %>
 </p>
+<% if event.linkable.class.respond_to? :is_exandable? %>
+  <div class="event_details" id="event_<%= event.id %>" style="display:none;">
+  </div>
+  <span class="event_url" id="event_url_<%= event.id %>" style="display:none;">
+    <%= polymorphic_url [my_timeline, event.linkable] %>
+  </span>
+<% end %>

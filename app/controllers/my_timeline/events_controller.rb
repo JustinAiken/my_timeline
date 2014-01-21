@@ -19,11 +19,11 @@ module MyTimeline
     end
 
     def edit
-      @event = Event.find_by_id(params[:id])
+      @event = Event.find_by_id params[:id]
     end
 
     def update
-      @event = Event.find_by_id(params[:id])
+      @event = Event.find_by_id params[:id]
       if @event.update_attributes(rails4? ? event_params : params[:event])
         redirect_to root_path, notice: "Edit successful."
       else

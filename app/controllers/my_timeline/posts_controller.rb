@@ -23,6 +23,11 @@ module MyTimeline
       end
     end
 
+    def show
+      @post = Post.find_by_id params[:id]
+      render text: @post.full_text
+    end
+
   private
 
     if rails4?

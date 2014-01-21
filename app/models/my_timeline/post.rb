@@ -12,5 +12,9 @@ module MyTimeline
     validates :full_text, presence: true
 
     accepts_nested_attributes_for :event
+
+    def self.is_exandable?
+      true
+    end
   end
 end
