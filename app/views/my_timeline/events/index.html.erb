@@ -1,8 +1,10 @@
 <%= javascript_include_tag "my_timeline/events" %>
 
-<div class="page-header">
-  <small>A demonstration timeline</small>
-</div>
+<% if t "my_timeline.timeline_header", default: nil %>
+  <div class="page-header">
+    <small><%= t "my_timeline.timeline_header" %></small>
+  </div>
+<% end %>
 
 <% @dates_with_events.each do |day| %>
   <h4><%= date_header_string day[:date] %></h4>
