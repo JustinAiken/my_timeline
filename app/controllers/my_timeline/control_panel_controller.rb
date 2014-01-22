@@ -9,7 +9,7 @@ module MyTimeline
       if rails4?
         @user.time_zone = user_params[:time_zone]
       else
-        @user.time_zone = params[:user][:time_zone]
+        @user.time_zone = params[user_param][:time_zone]
       end
 
       @user.save!
@@ -20,8 +20,12 @@ module MyTimeline
 
     if rails4?
       define_method :user_params do
-        params.required(:user).permit :time_zone
+        params.required(user_param).permit :time_zone
       end
+    end
+
+    def user_param
+      MyTimeline.user_class.model_name.param_key.to_sym
     end
   end
 end

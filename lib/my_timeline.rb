@@ -20,7 +20,8 @@ module MyTimeline
   @@table_class = "table table-striped"
 
   @@enabled_plugins = []
-  def self.register_plugin(plugin_name)
+  def self.register_plugin(plugin_name, options = {})
+    MyTimeline.config_object.key plugin_name, options
     @@enabled_plugins << plugin_name
   end
 

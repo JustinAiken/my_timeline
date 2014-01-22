@@ -1,38 +1,50 @@
+require 'singleton'
+
 module MyTimeline
   class UserStub
+    include Singleton
 
-    def self.events
+    include ActiveModel::Validations
+    include ActiveModel::Conversion
+    extend ActiveModel::Naming
+
+    def events
       Event
     end
 
-    def self.settings
-      RailsSettings::SettingObject
+    def settings(var = :core)
+      RailsSettings::SettingObject.find_by_var var
     end
 
-    def self.id
+    def id
       nil
     end
 
-    def self.save!
+    def save!
       true
+    end
+
+    def persisted?
+      false
     end
 
     def self.method_missing(meth, *args, &blk)
       if meth.to_s =~ /^find_by/
         UserStub
       else
-        super
+        instance.send meth, *args, &blk
+        # super
       end
     end
 
     def self.settings_attr_accessor(*args)
       args.each do |method_name|
         eval "
-          def #{method_name}
-            self.settings(:core).send(:#{method_name})
+          def self.#{method_name.to_s}
+            RailsSettings::SettingObject.find_by_var(:core).send('#{method_name}')
           end
-          def #{method_name}=(value)
-            self.settings(:core).send(:#{method_name}=, value)
+          def self.#{method_name.to_s}=(value)
+            RailsSettings::SettingObject.find_by_var(:core).send('#{method_name}=', value)
           end
         "
       end

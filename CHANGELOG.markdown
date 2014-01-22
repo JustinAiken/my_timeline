@@ -1,3 +1,7 @@
+# DEVELOP
+  * [BUGFIX] Fix the settings to reload in development mode
+  * [BUGFIX] Fix the user stub
+
 # 0.0.5
   * [FEATURE] Added a detail view that expands below the summary post, if that model supports an expandable view (defaults to not.)
   * [BUGFIX] Dehardcode header text
