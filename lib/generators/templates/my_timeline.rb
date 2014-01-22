@@ -13,4 +13,7 @@ MyTimeline.setup do |config|
 
   # What classes to style the table with
   # config.table_class = "table table-striped"
+
+  # How to format the time of the event; default looks like "3:33 pm - "
+  # config.time_formatter = %-l:%M %P - "
 end
