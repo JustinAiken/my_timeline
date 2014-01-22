@@ -1,4 +1,4 @@
-# DEVELOP
+# 0.1.0
   * [BUGFIX] Fix the settings to reload in development mode
   * [BUGFIX] Fix the user stub
   * [FEATURE] Display event's times with the User's timezone, and make the time formatting configurable
