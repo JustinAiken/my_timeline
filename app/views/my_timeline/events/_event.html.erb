@@ -7,7 +7,7 @@
   <%= link_to event.external_link do %>
   <%= image_tag event.icon_path, size: "32x32" %>
 <% end %>
-<%= event.happened_on %> -
+<%= event.happened_on %>
 <%= raw event.description %>
 <% if @owner_viewing %>
   <%= link_to edit_event_path(event.id) do %>

@@ -5,7 +5,7 @@ require "my_timeline/engine"
 
 module MyTimeline
 
-  mattr_accessor :user_class, :user_slug, :render_method, :table_class, :config_object, :enabled_plugins
+  mattr_accessor :user_class, :user_slug, :render_method, :table_class, :config_object, :enabled_plugins, :time_formatter
 
   @@user_class = 'MyTimeline::UserStub'
   def self.user_class
@@ -19,8 +19,11 @@ module MyTimeline
 
   @@table_class = "table table-striped"
 
-  @@enabled_plugins = []
-  def self.register_plugin(plugin_name)
+  @@time_formatter = "%-l:%M %P - "
+
+  @@enabled_plugins = Set.new
+  def self.register_plugin(plugin_name, options = {})
+    MyTimeline.config_object.key plugin_name, options
     @@enabled_plugins << plugin_name
   end
 

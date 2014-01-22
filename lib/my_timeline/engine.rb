@@ -3,7 +3,6 @@ require 'my_timeline/core_ext/rails4'
 
 module MyTimeline
   class Engine < ::Rails::Engine
-    include SettingsExt
 
     isolate_namespace MyTimeline
 
@@ -18,7 +17,11 @@ module MyTimeline
     end
 
     config.after_initialize do |app|
-      extend_rails_settings
+      MyTimeline::SettingsExt.extend_rails_settings
     end
+
+    config.to_prepare do |app|
+      MyTimeline::SettingsExt.extend_rails_settings
+    end if Rails.env.development?
   end
 end

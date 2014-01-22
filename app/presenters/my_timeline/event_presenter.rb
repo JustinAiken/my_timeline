@@ -12,11 +12,28 @@ module MyTimeline
     end
 
     def happened_on
-      event.happened_on.strftime("%-l:%M %P")
+      time.strftime MyTimeline.time_formatter
     end
 
     def id
       event.id
+    end
+
+  private
+
+    def time
+      return event.happened_on if event.linkable.class.respond_to? :keep_original_time_zone?
+      return event.happened_on unless user.time_zone.present?
+
+      event.happened_on.in_time_zone user.time_zone
+    end
+
+    def user
+      if MyTimeline.user_class == MyTimeline::UserStub
+        MyTimeline::UserStub
+      else
+        event.user
+      end
     end
 
     def method_missing(meth, *args, &blk)

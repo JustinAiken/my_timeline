@@ -2,7 +2,7 @@ require 'rails-settings'
 
 module MyTimeline
   module SettingsExt
-    def extend_rails_settings
+    def self.extend_rails_settings
 
       RailsSettings::SettingObject.class_eval do
         self.table_name = "my_timeline_settings"
@@ -35,3 +35,4 @@ module MyTimeline
     end
   end
 end
+
