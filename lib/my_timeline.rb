@@ -21,7 +21,7 @@ module MyTimeline
 
   @@time_formatter = "%-l:%M %P - "
 
-  @@enabled_plugins = []
+  @@enabled_plugins = Set.new
   def self.register_plugin(plugin_name, options = {})
     MyTimeline.config_object.key plugin_name, options
     @@enabled_plugins << plugin_name
